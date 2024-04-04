@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "veltris.com/calculator";
+
+service Calculator {
+    // Unary RPC method to add two numbers
+    rpc Add (AddRequest) returns (AddResponse);
+}
+
+message AddRequest {
+    // The first number to add
+    int32 num1 = 1;
+    // The second number to add
+    int32 num2 = 2;
+}
+
+message AddResponse {
+    // The result of adding the two numbers
+    int32 result = 1;
+}

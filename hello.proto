@@ -1,0 +1,28 @@
+syntax = "proto3";
+option go_package = "veltris.com/grpc";
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+service Calculator {
+    // Unary RPC method to add two numbers
+    rpc Add (AddRequest) returns (AddResponse);
+}
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
+message AddRequest {
+    // The first number to add
+    int32 num1 = 1;
+    // The second number to add
+    int32 num2 = 2;
+}
+message AddResponse {
+    // The result of adding the two numbers
+    int32 result = 1;
+}
+
